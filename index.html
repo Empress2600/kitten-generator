@@ -13,7 +13,7 @@
 
 <body>
 
-<h2>Kitten Submission Generator (Final)</h2>
+<h2>Kitten Submission Generator</h2>
 
 <input id="name" placeholder="Name">
 <input id="gender" placeholder="Gender">
@@ -30,7 +30,6 @@
 <input id="ready" placeholder="Ready date (June 2026)">
 <input id="petPrice" placeholder="Pet Price">
 <input id="breedPrice" placeholder="Breeding Price">
-
 
 <h3>Mother</h3>
 
@@ -49,156 +48,5 @@
 <input id="motherColor" placeholder="Mother Color">
 <input id="motherEye" placeholder="Mother Eye Color">
 
-
 <h3>Father</h3>
 
-<select id="fatherSelect" onchange="fillFather()">
-  <option value="">Select Father</option>
-  <option value="max">Maximilian</option>
-  <option value="ivan">Ivan</option>
-</select>
-
-<input id="fatherName" placeholder="Father Name">
-<input id="fatherWeight" placeholder="Father Weight">
-<input id="fatherColor" placeholder="Father Color">
-<input id="fatherEye" placeholder="Father Eye Color">
-
-
-<button onclick="generate()">Generate</button>
-<button onclick="copyText()">Copy</button>
-
-<textarea id="output"></textarea>
-
-
-<script>
-
-function generate(){
-let text =
-`Name: ${name.value}&nbsp;
-Breed: Bengal&nbsp;&nbsp;
-Cattery registration: Of The Empress TICA, CFA and TCA Inc&nbsp;
-Gender: ${gender.value}&nbsp;
-Fur color and code: ${color.value}&nbsp;
-Eye color: ${eye.value}&nbsp;&nbsp;&nbsp;
-Food brand: ${food.value}&nbsp;
-Specify:&nbsp;
-${specify.value}&nbsp;
-
-Optional (not required):&nbsp;
-Personality traits, small defect (tail kink, hernia, etc.) or distinctive feature you are proud of and want to highlight&nbsp;
-
-${traits.value}&nbsp;
-
--Bengals color, patterns and eyes develop & change throughout their growth and up until they reach two years old&nbsp;
--May carry the longhair hair trait (Cashmere)&nbsp;
--Color contrast will be beautiful with age and coat development&nbsp;&nbsp;
--Loves feathered toys&nbsp;&nbsp;
--Self-entertained Cat TV or Cat Games on YouTube&nbsp;&nbsp;
--Dog Experience and other cats&nbsp;&nbsp;
--Spots will become darker within weeks. Currently she has a lot of baby fluff that is hiding her brilliant spots&nbsp;&nbsp;
-
-*Will have short hair vs long hair.&nbsp;&nbsp;&nbsp;
-
-Weight (lbs): ${weight.value}&nbsp; pounds but growing&nbsp;&nbsp;
-Date of birth: ${dob.value}&nbsp;
-Date available to be shipped to the USA: Pet is located right now Charlotte NC : Ready ${ready.value}&nbsp;
-
-(For Pet) Price: $${petPrice.value}&nbsp;
-(If breeding is available) Breeding Price: $${breedPrice.value}&nbsp;
-
-Parent Information&nbsp;
-
-Mother:&nbsp;&nbsp;
-${motherName.value}&nbsp;
-&nbsp;• Weight (lbs): ${motherWeight.value}&nbsp; pounds&nbsp;&nbsp;
-&nbsp;• Color: ${motherColor.value}&nbsp;
-&nbsp;• Eye color: ${motherEye.value}&nbsp;
-
-Father:&nbsp;&nbsp;
-${fatherName.value}&nbsp;
-&nbsp;• Weight (lbs): ${fatherWeight.value}&nbsp; pounds&nbsp;&nbsp;
-&nbsp;• Color: ${fatherColor.value}&nbsp;
-&nbsp;• Eye color: ${fatherEye.value}&nbsp;
-`;
-
-document.getElementById("output").value = text;
-}
-
-
-function copyText(){
-let text = document.getElementById("output");
-text.select();
-document.execCommand("copy");
-alert("Copied ✅");
-}
-
-
-function fillMother(){
-  let m = document.getElementById("motherSelect").value;
-
-  if(m === "blue"){
-    motherName.value = "Blue";
-    motherWeight.value = "8";
-    motherColor.value = "Charcoal Blue";
-    motherEye.value = "Green";
-  }
-
-  if(m === "sapphire"){
-    motherName.value = "Sapphire";
-    motherWeight.value = "8";
-    motherColor.value = "Mink";
-    motherEye.value = "Green";
-  }
-
-  if(m === "kora"){
-    motherName.value = "Kora";
-    motherWeight.value = "9";
-    motherColor.value = "Brown";
-    motherEye.value = "Green";
-  }
-
-  if(m === "katrin"){
-    motherName.value = "Katrin";
-    motherWeight.value = "9";
-    motherColor.value = "Silver";
-    motherEye.value = "Green";
-  }
-
-  if(m === "bella"){
-    motherName.value = "Bella";
-    motherWeight.value = "8";
-    motherColor.value = "Seal Lynx Snow";
-    motherEye.value = "Blue";
-  }
-
-  if(m === "serenity"){
-    motherName.value = "Serenity";
-    motherWeight.value = "8";
-    motherColor.value = "Brown";
-    motherEye.value = "Gold";
-  }
-}
-
-
-function fillFather(){
-  let f = document.getElementById("fatherSelect").value;
-
-  if(f === "max"){
-    fatherName.value = "Maximilian";
-    fatherWeight.value = "20";
-    fatherColor.value = "Brown";
-    fatherEye.value = "Green";
-  }
-
-  if(f === "ivan"){
-    fatherName.value = "Ivan";
-    fatherWeight.value = "12";
-    fatherColor.value = "Silver";
-    fatherEye.value = "Green";
-  }
-}
-
-</script>
-
-</body>
-</html>
