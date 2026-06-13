@@ -5,64 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: Arial; max-width: 800px; margin: auto; padding: 15px; }
-    input, select { width: 100%; margin-bottom: 10px; padding: 10px; }
+    input { width: 100%; margin-bottom: 10px; padding: 10px; }
     button { width: 100%; padding: 12px; margin-top: 10px; font-size: 16px; }
-    textarea { width: 100%; height: 260px; margin-top: 15px; }
+    textarea { width: 100%; height: 420px; margin-top: 15px; }
   </style>
 </head>
 
 <body>
 
-<h2>Kitten Submission Generator</h2>
+<h2>Kitten Submission Generator (Final)</h2>
 
-<h3>Kitten Info</h3>
 <input id="name" placeholder="Name">
+<input id="gender" placeholder="Gender">
+<input id="color" placeholder="Fur color and code">
+<input id="eye" placeholder="Eye color">
 
-<select id="gender">
-  <option value="Male">Male</option>
-  <option value="Female">Female</option>
-</select>
+<input id="food" placeholder="Food brand">
+<input id="specify" placeholder="Specify line">
 
-<select id="color">
-  <option value="Mink">Mink</option>
-  <option value="Silver">Silver</option>
-  <option value="Charcoal">Charcoal</option>
-  <option value="Brown Rosette">Brown Rosette</option>
-</select>
+<input id="traits" placeholder="Personality traits (optional)">
 
-<select id="eye">
-  <option value="Green">Green</option>
-  <option value="Aqua">Aqua</option>
-  <option value="Gold">Gold</option>
-</select>
+<input id="weight" placeholder="Weight">
+<input id="dob" placeholder="Date of birth">
+<input id="ready" placeholder="Ready date (June 2026)">
+<input id="petPrice" placeholder="Pet Price">
+<input id="breedPrice" placeholder="Breeding Price">
 
-<input id="weight" placeholder="Weight (lbs)">
-<input id="dob" placeholder="DOB (March 8, 2026)">
-<input id="ready" placeholder="Ready Month (June 2026)">
-
-<h3>Parents (Quick Fill)</h3>
-
-<select id="preset" onchange="fillParents()">
-  <option value="">Choose Parent Pair</option>
-  <option value="blue_max">Blue + Maximilian</option>
-  <option value="sapphire_max">Sapphire + Maximilian</option>
-</select>
-
-<h4>Mother</h4>
-<input id="motherName" placeholder="Mother Name" value="">
+<h3>Mother</h3>
+<input id="motherName" placeholder="Mother Name">
 <input id="motherWeight" placeholder="Mother Weight">
 <input id="motherColor" placeholder="Mother Color">
-<input id="motherEye" placeholder="Mother Eye">
+<input id="motherEye" placeholder="Mother Eye Color">
 
-<h4>Father</h4>
+<h3>Father</h3>
 <input id="fatherName" placeholder="Father Name">
 <input id="fatherWeight" placeholder="Father Weight">
 <input id="fatherColor" placeholder="Father Color">
-<input id="fatherEye" placeholder="Father Eye">
-
-<h3>Pricing</h3>
-<input id="petPrice" placeholder="Pet Price">
-<input id="breedPrice" placeholder="Breeding Price">
+<input id="fatherEye" placeholder="Father Eye Color">
 
 <button onclick="generate()">Generate</button>
 <button onclick="copyText()">Copy</button>
@@ -70,93 +49,42 @@
 <textarea id="output"></textarea>
 
 <script>
+function generate(){
+let text =
+`Name: ${name.value}&nbsp;
+Breed: Bengal&nbsp;&nbsp;
+Cattery registration: Of The Empress TICA, CFA and TCA Inc&nbsp;
+Gender: ${gender.value}&nbsp;
+Fur color and code: ${color.value}&nbsp;
+Eye color: ${eye.value}&nbsp;&nbsp;&nbsp;
+Food brand: ${food.value}&nbsp;
+Specify:&nbsp;
+${specify.value}&nbsp;
 
-function fillParents(){
-  let preset = document.getElementById("preset").value;
+Optional (not required):&nbsp;
+Personality traits, small defect (tail kink, hernia, etc.) or distinctive feature you are proud of and want to highlight&nbsp;
 
-  if(preset === "blue_max"){
-    motherName.value = "Blue";
-    motherWeight.value = "8";
-    motherColor.value = "Charcoal Blue";
-    motherEye.value = "Green";
+${traits.value}&nbsp;
 
-    fatherName.value = "Maximilian";
-    fatherWeight.value = "20";
-    fatherColor.value = "Brown";
-    fatherEye.value = "Green";
-  }
+-Bengals color, patterns, and eyes develop & change throughout their growth and up until they reach two years old&nbsp;
+-May carry the longhair hair trait (Cashmere)&nbsp;
+-Color contrast will be beautiful with age and coat development&nbsp;&nbsp;
+-Loves feathered toys&nbsp;&nbsp;
+-Self-entertained&nbsp;&nbsp;
+-Dog Experience and other cats&nbsp;&nbsp;
+-Spots will become darker within weeks. Currently she has a lot of baby fluff that is hiding her brilliant spots&nbsp;&nbsp;
 
-  if(preset === "sapphire_max"){
-    motherName.value = "Sapphire";
-    motherWeight.value = "8";
-    motherColor.value = "Mink";
-    motherEye.value = "Green";
+*Will have short hair vs long hair.&nbsp;&nbsp;&nbsp;
 
-    fatherName.value = "Maximilian";
-    fatherWeight.value = "20";
-    fatherColor.value = "Brown";
-    fatherEye.value = "Green";
-  }
-}
+Weight (lbs): ${weight.value}&nbsp; pounds but growing&nbsp;&nbsp;
+Date of birth: ${dob.value}&nbsp;
+Date available to be shipped to the USA: Pet is located right now Charlotte NC : Ready ${ready.value}&nbsp;
 
-function generate() {
-  let text = 
-`Name: ${name.value}
-Breed: Bengal
-Cattery registration: Of The Empress TICA, CFA and TCA Inc
+(For Pet) Price: $${petPrice.value}&nbsp;
+(If breeding is available) Breeding Price: $${breedPrice.value}&nbsp;
 
-Gender: ${gender.value}
-Fur color and code: ${color.value}
-Eye color: ${eye.value}
+Parent Information&nbsp;
 
-Food brand: Royal Canin and Raw Meat
-
-Specify:
-(choose one: if purchased as pet comes fixed.)
-
-Optional (not required):
--Bengals color, patterns, and eyes develop & change throughout their growth and up until they reach two years old
--May carry the longhair hair trait (Cashmere)
--Color contrast will be beautiful with age and coat development
--Loves feathered toys
--Self-entertained
--Dog Experience and other cats
--Spots will become darker within weeks
-*Will have short hair vs long hair.
-
-Weight (lbs): ${weight.value} pounds but growing
-Date of birth: ${dob.value}
-Date available to be shipped to the USA: Pet is located right now Charlotte NC : Ready ${ready.value}
-
-(For Pet) Price: $${petPrice.value}
-(If breeding is available) Breeding Price: $${breedPrice.value}
-
-Parent Information
-
-Mother:
-${motherName.value}
-• Weight (lbs): ${motherWeight.value} pounds
-• Color: ${motherColor.value}
-• Eye color: ${motherEye.value}
-
-Father:
-${fatherName.value}
-• Weight (lbs): ${fatherWeight.value} pounds
-• Color: ${fatherColor.value}
-• Eye color: ${fatherEye.value}
-`;
-
-  document.getElementById("output").value = text;
-}
-
-function copyText(){
-  let text = document.getElementById("output");
-  text.select();
-  document.execCommand("copy");
-  alert("Copied ✅ Paste into Telegram");
-}
-
-</script>
-
-</body>
-</html>
+Mother:&nbsp;&nbsp;
+${motherName.value}&nbsp;
+&nbsp;• Weight (lbs): ${motherWeight.value}&nbsp; pounds&nbsp;&nbsp;
