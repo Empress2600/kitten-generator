@@ -88,3 +88,26 @@ Parent Information&nbsp;
 Mother:&nbsp;&nbsp;
 ${motherName.value}&nbsp;
 &nbsp;• Weight (lbs): ${motherWeight.value}&nbsp; pounds&nbsp;&nbsp;
+&nbsp;• Color: ${motherColor.value}&nbsp;
+&nbsp;• Eye color: ${motherEye.value}&nbsp;
+
+Father:&nbsp;&nbsp;
+${fatherName.value}&nbsp;
+&nbsp;• Weight (lbs): ${fatherWeight.value}&nbsp; pounds&nbsp;&nbsp;
+&nbsp;• Color: ${fatherColor.value}&nbsp;
+&nbsp;• Eye color: ${fatherEye.value}&nbsp;
+`;
+
+document.getElementById("output").value = text;
+}
+
+function copyText(){
+let text = document.getElementById("output");
+text.select();
+document.execCommand("copy");
+alert("Copied ✅");
+}
+</script>
+
+</body>
+</html>
