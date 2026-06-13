@@ -42,7 +42,7 @@
   <option value="katrin">Katrin</option>
   <option value="bella">Bella</option>
   <option value="serenity">Serenity</option>
-  </select>
+</select>
 
 <input id="motherName" placeholder="Mother Name">
 <input id="motherWeight" placeholder="Mother Weight">
@@ -70,7 +70,7 @@
 <textarea id="output"></textarea>
 
 
-</script>
+<script>
 
 function generate(){
 let text =
@@ -89,7 +89,7 @@ Personality traits, small defect (tail kink, hernia, etc.) or distinctive featur
 
 ${traits.value}&nbsp;
 
--Bengals color, patterns, and eyes develop & change throughout their growth and up until they reach two years old&nbsp;
+-Bengals color, patterns and eyes develop & change throughout their growth and up until they reach two years old&nbsp;
 -May carry the longhair hair trait (Cashmere)&nbsp;
 -Color contrast will be beautiful with age and coat development&nbsp;&nbsp;
 -Loves feathered toys&nbsp;&nbsp;
@@ -156,24 +156,29 @@ function fillMother(){
     motherColor.value = "Brown";
     motherEye.value = "Green";
   }
+
   if(m === "katrin"){
-  motherName.value = "Katrin";
-  motherWeight.value = "9";
-  motherColor.value = "Silver";
-  motherEye.value = "Green";
+    motherName.value = "Katrin";
+    motherWeight.value = "9";
+    motherColor.value = "Silver";
+    motherEye.value = "Green";
+  }
+
+  if(m === "bella"){
+    motherName.value = "Bella";
+    motherWeight.value = "8";
+    motherColor.value = "Seal Lynx Snow";
+    motherEye.value = "Blue";
+  }
+
+  if(m === "serenity"){
+    motherName.value = "Serenity";
+    motherWeight.value = "8";
+    motherColor.value = "Brown";
+    motherEye.value = "Gold";
+  }
 }
-if(m === "bella"){
-  motherName.value = "Bella";
-  motherWeight.value = "8";
-  motherColor.value = "Seal Lynx Snow";
-  motherEye.value = "Blue";
-}
-if(m === "serenity"){
-  motherName.value = "Serenity";
-  motherWeight.value = "8";
-  motherColor.value = "Brown";
-  motherEye.value = "Gold";
-}
+
 
 function fillFather(){
   let f = document.getElementById("fatherSelect").value;
@@ -192,25 +197,8 @@ function fillFather(){
     fatherEye.value = "Green";
   }
 }
-<button onclick="generate()">Generate</button>
-<button onclick="copyText()">Copy</button></script>
-<button onclick="saveKitten()">Save Kitten</button>
-<button onclick="loadKitten()">Load Last Kitten</button>  
-function saveKitten(){
-  const data = {
-    name: name.value,
-    gender: gender.value,
-    color: color.value,
-    eye: eye.value,
-    food: food.value,
-    specify: specify.value,
-    traits: traits.value,
-    weight: weight.value,
-    dob: dob.value,
-    ready: ready.value,
-    petPrice: petPrice.value,
-    breedPrice: breedPrice.value,
 
-    motherName: motherName.value,
-    motherWeight:</body>
+</script>
+
+</body>
 </html>
