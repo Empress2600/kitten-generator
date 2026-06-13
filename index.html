@@ -30,34 +30,7 @@
 <input id="ready" placeholder="Ready date (June 2026)">
 <input id="petPrice" placeholder="Pet Price">
 <input id="breedPrice" placeholder="Breeding Price">
-
 <h3>Mother</h3>
-
-<select id="motherSelect" onchange="fillMother()">
-  <option value="">Select Mother</option>
-  <option value="blue">Blue</option>
-  <option value="sapphire">Sapphire</option>
-  <option value="kora">Kora</option>
-</select>
-
-<input id="motherName" placeholder="Mother Name">
-<input id="motherWeight" placeholder="Mother Weight">
-<input id="motherColor" placeholder="Mother Color">
-<input id="motherEye" placeholder="Mother Eye Color">
-</select>
-
-<input id="fatherName" placeholder="Father Name">
-<input id="fatherWeight" placeholder="Father Weight">
-<input id="fatherColor" placeholder="Father Color">
-<input id="fatherEye" placeholder="Father Eye Color">
-<h3>Father</h3>
-<input id="fatherName" placeholder="Father Name">
-<input id="fatherWeight" placeholder="Father Weight">
-<input id="fatherColor" placeholder="Father Color">
-<input id="fatherEye" placeholder="Father Eye Color">
-
-<button onclick="generate()">Generate</button>
-<button onclick="copyText()">Copy</button>
 
 <textarea id="output"></textarea>
 
@@ -83,7 +56,7 @@ ${traits.value}&nbsp;
 -May carry the longhair hair trait (Cashmere)&nbsp;
 -Color contrast will be beautiful with age and coat development&nbsp;&nbsp;
 -Loves feathered toys&nbsp;&nbsp;
--Self-entertained&nbsp;&nbsp;
+-Self-entertained Cat TV orn Cat Games on YouTube&nbsp;&nbsp;
 -Dog Experience and other cats&nbsp;&nbsp;
 -Spots will become darker within weeks. Currently she has a lot of baby fluff that is hiding her brilliant spots&nbsp;&nbsp;
 
@@ -97,19 +70,17 @@ Date available to be shipped to the USA: Pet is located right now Charlotte NC :
 (If breeding is available) Breeding Price: $${breedPrice.value}&nbsp;
 
 Parent Information&nbsp;
+<h3>Mother</h3>
 
-Mother:&nbsp;&nbsp;
-${motherName.value}&nbsp;
-&nbsp;• Weight (lbs): ${motherWeight.value}&nbsp; pounds&nbsp;&nbsp;
-&nbsp;• Color: ${motherColor.value}&nbsp;
-&nbsp;• Eye color: ${motherEye.value}&nbsp;
+<select id="motherSelect" onchange="fillMother()">
+  <option value="">Select Mother</option>
+  <option value="blue">Blue</option>
+  <option value="sapphire">Sapphire</option>
+  <option value="kora">Kora</option>
+</select>
 
-Father:&nbsp;&nbsp;
-${fatherName.value}&nbsp;
-&nbsp;• Weight (lbs): ${fatherWeight.value}&nbsp; pounds&nbsp;&nbsp;
-&nbsp;• Color: ${fatherColor.value}&nbsp;
-&nbsp;• Eye color: ${fatherEye.value}&nbsp;
-`;
+<input id="motherName" placeholder="Mother Name">
+<input id
 
 document.getElementById("output").value = text;
 }
