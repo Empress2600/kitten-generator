@@ -41,7 +41,8 @@
   <option value="kora">Kora</option>
   <option value="katrin">Katrin</option>
   <option value="bella">Bella</option>
-</select>
+  <option value="bella">Bella</optio>
+  /select>
 
 <input id="motherName" placeholder="Mother Name">
 <input id="motherWeight" placeholder="Mother Weight">
@@ -165,9 +166,15 @@ function fillMother(){
 if(m === "bella"){
   motherName.value = "Bella";
   motherWeight.value = "8";
+  motherColor.value = "Seal Lynx Snow";
+  motherEye.value = "Blue";
+
+  if(m === "serenity"){
+  motherName.value = "Serenity";
+  motherWeight.value = "8";
   motherColor.value = "Brown";
-  motherEye.value = "Green";
-}}
+  motherEye.value = "Gold";
+}}}
 
 
 function fillFather(){
