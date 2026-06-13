@@ -17,19 +17,19 @@
 
 <input id="name" placeholder="Name">
 <input id="gender" placeholder="Gender">
-<input id="color" placeholder="Fur color and code">
+<input id="color" placeholder="Fur color">
 <input id="eye" placeholder="Eye color">
 
 <input id="food" placeholder="Food brand">
 <input id="specify" placeholder="Specify line">
-<input id="traits" placeholder="Personality traits">
+<input id="traits" placeholder="Traits">
 
 <input id="weight" placeholder="Weight">
 <input id="dob" placeholder="Date of birth">
 <input id="ready" placeholder="Ready date">
 
-<input id="petPrice" placeholder="Pet Price">
-<input id="breedPrice" placeholder="Breeding Price">
+<input id="petPrice" placeholder="Pet price">
+<input id="breedPrice" placeholder="Breeding price">
 
 <h3>Mother</h3>
 <select id="motherSelect" onchange="fillMother()">
@@ -44,8 +44,6 @@
 
 <input id="motherName" placeholder="Mother Name">
 <input id="motherWeight" placeholder="Mother Weight">
-<input id="motherColor" placeholder="Mother Color">
-<input id="motherEye" placeholder="Mother Eye">
 
 <h3>Father</h3>
 <select id="fatherSelect" onchange="fillFather()">
@@ -56,8 +54,6 @@
 
 <input id="fatherName" placeholder="Father Name">
 <input id="fatherWeight" placeholder="Father Weight">
-<input id="fatherColor" placeholder="Father Color">
-<input id="fatherEye" placeholder="Father Eye">
 
 <button onclick="generate()">Generate</button>
 <button onclick="copyText()">Copy</button>
@@ -65,61 +61,72 @@
 <textarea id="output"></textarea>
 
 <script>
-
 function generate(){
-let text =
-`Name: ${name.value}
+  let name = document.getElementById("name").value;
+  let gender = document.getElementById("gender").value;
+  let color = document.getElementById("color").value;
+  let eye = document.getElementById("eye").value;
+  let food = document.getElementById("food").value;
+  let specify = document.getElementById("specify").value;
+  let traits = document.getElementById("traits").value;
+  let weight = document.getElementById("weight").value;
+  let dob = document.getElementById("dob").value;
+  let ready = document.getElementById("ready").value;
+  let pet = document.getElementById("petPrice").value;
+  let breed = document.getElementById("breedPrice").value;
+  let mom = document.getElementById("motherName").value;
+  let dad = document.getElementById("fatherName").value;
+
+  let text =
+`Name: ${name}
 
 Breed: Bengal
-Gender: ${gender.value}
-Color: ${color.value}
-Eye: ${eye.value}
+Gender: ${gender}
+Color: ${color}
+Eye: ${eye}
 
-Food: ${food.value}
-Specify:
-${specify.value}
+Food: ${food}
+Specify: ${specify}
 
-Traits:
-${traits.value}
+Traits: ${traits}
 
-Weight: ${weight.value}
-DOB: ${dob.value}
-Ready: ${ready.value}
+Weight: ${weight}
+DOB: ${dob}
+Ready: ${ready}
 
-Pet Price: $${petPrice.value}
-Breeding Price: $${breedPrice.value}
+Pet: $${pet}
+Breeding: $${breed}
 
-Mother: ${motherName.value}
-Father: ${fatherName.value}
-`;
+Mother: ${mom}
+Father: ${dad}`;
 
-document.getElementById("output").value = text;
+  document.getElementById("output").value = text;
 }
 
 function copyText(){
-document.getElementById("output").select();
-document.execCommand("copy");
-alert("Copied ✅");
+  let box = document.getElementById("output");
+  box.select();
+  document.execCommand("copy");
+  alert("Copied ✅");
 }
 
 function fillMother(){
-let m = document.getElementById("motherSelect").value;
+  let m = document.getElementById("motherSelect").value;
 
-if(m === "blue"){ motherName.value="Blue"; motherWeight.value="8"; motherColor.value="Charcoal Blue"; motherEye.value="Green";}
-if(m === "sapphire"){ motherName.value="Sapphire"; motherWeight.value="8"; motherColor.value="Mink"; motherEye.value="Green";}
-if(m === "kora"){ motherName.value="Kora"; motherWeight.value="9"; motherColor.value="Brown"; motherEye.value="Green";}
-if(m === "katrin"){ motherName.value="Katrin"; motherWeight.value="9"; motherColor.value="Silver"; motherEye.value="Green";}
-if(m === "bella"){ motherName.value="Bella"; motherWeight.value="8"; motherColor.value="Seal Lynx Snow"; motherEye.value="Blue";}
-if(m === "serenity"){ motherName.value="Serenity"; motherWeight.value="8"; motherColor.value="Brown"; motherEye.value="Gold";}
+  if(m === "blue"){ motherName.value="Blue"; motherWeight.value="8";}
+  if(m === "sapphire"){ motherName.value="Sapphire"; motherWeight.value="8";}
+  if(m === "kora"){ motherName.value="Kora"; motherWeight.value="9";}
+  if(m === "katrin"){ motherName.value="Katrin"; motherWeight.value="9";}
+  if(m === "bella"){ motherName.value="Bella"; motherWeight.value="8";}
+  if(m === "serenity"){ motherName.value="Serenity"; motherWeight.value="8";}
 }
 
 function fillFather(){
-let f = document.getElementById("fatherSelect").value;
+  let f = document.getElementById("fatherSelect").value;
 
-if(f === "max"){ fatherName.value="Maximilian"; fatherWeight.value="20"; fatherColor.value="Brown"; fatherEye.value="Green";}
-if(f === "ivan"){ fatherName.value="Ivan"; fatherWeight.value="12"; fatherColor.value="Silver"; fatherEye.value="Green";}
+  if(f === "max"){ fatherName.value="Maximilian"; fatherWeight.value="20";}
+  if(f === "ivan"){ fatherName.value="Ivan"; fatherWeight.value="12";}
 }
-
 </script>
 
 </body>
