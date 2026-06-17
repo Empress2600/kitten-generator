@@ -83,7 +83,6 @@ function generate(){
   let mom = document.getElementById("motherName").value || "";
   let dad = document.getElementById("fatherName").value || "";
 
-  alert ("Loaded");
   let text =
 `Name: ${name}
 
@@ -112,13 +111,34 @@ Father: ${dad}`;
   document.getElementById("output").value = text;
 }
 
-function copyText(){
-  let box = document.getElementById("output");
-  box.select();
-  document.execCommand("copy");
-  alert("Copied ✅");
-}
+function saveKitten(){
+  const data + {
+    name :  document.getElementById("name") .value,
+    gender: document.getElementById("gender").value,
+    color: document.getElementById("color").value, 
+    eye: document.getElementById("eye").value,  
+    food: document.getElementById("food").value,    
+    specify: document.getElementById("specify").value, 
+    traits: document.getElementById("traits").value,    
+    weight: document.getElementById("weight").value,    
+    dob: document.getElementById("dob").value,   
+    ready: document.getElementById("ready").value,   
+    petPrice: document.getElementById("petPrice").value,   
+    breedPrice: document.getElementById("breedPrice").value,   
+    motherName: document.getElementById("motherName").value,   
+    fatherName: document.getElementById("fatherName").value  }; 
+  
+  localStorage.setItem("kittenData", JSON.stringify(data));  alert("Saved");}
 
+
+  function loadKitten(){ 
+    const data = JSON.parse(localStorage.getItem("kittenData"));
+    
+    if(!data){  
+      alert("No saved kitten");    
+      return;  
+    }
+    
 function fillMother(){
   let m = document.getElementById("motherSelect").value;
 
