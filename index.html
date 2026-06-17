@@ -132,11 +132,29 @@ function saveKitten(){
 
 
   function loadKitten(){ 
-    const data = {JSON.parse(localStorage.getItem("kittenData"));
+    const data = JSON.parse(localStorage.getItem("kittenData"));
     
     if(!data){  
       alert("No saved kitten");    
       return;  <!DOCTYPE html>
+      document.getElementById("name").value = data.name || "";
+      document.getElementById("gender").value = data.gender || "";
+      document.getElementById("color").value = data.color || "";
+      document.getElementById("eye").value = data.eye || "";
+      document.getElementById("food").value = data.food || "";
+      document.getElementById("specify").value = data.specify || "";
+      document.getElementById("traits").value = data.traits || "";
+      document.getElementById("weight").value = data.weight || "";
+      document.getElementById("dob").value = data.dob || "";
+      document.getElementById("ready").value = data.ready || "";
+      document.getElementById("petPrice").value = data.petPrice || "";
+      document.getElementById("breedPrice").value = data.breedPrice || "";
+      document.getElementById("motherName").value = data.motherName || "";
+      document.getElementById("fatherName").value = data.fatherName || "";
+      
+      alert("Loaded");
+      }
+    
 <html>
 <head>
   <title>Kitten Generator</title>
